@@ -1,0 +1,52 @@
+{
+  "conversaciones": [
+    {
+      "fecha": "2025-05-04 01:04:49",
+      "intercambios": [
+        {
+          "rol": "usuario",
+          "mensaje": "ayuda"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "Puedes preguntarme sobre historia, compositores, estructura, técnica, órganos famosos, música litúrgica, mantenimiento u otras curiosidades del órgano. También puedo contarte algún dato curioso aleatorio si escribes 'dato curioso'."
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "dato curioso"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "En la antigüedad, se necesitaban hasta 12 personas para accionar los fuelles de un órgano grande. ¡Todo un equipo de 'sopladores'! 💨"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "salir"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "Ha sido un placer compartir información sobre este maravilloso instrumento. ¡Vuelve pronto! 🎵"
+        }
+      ]
+    }
+  ],
+  "preguntas_frecuentes": {
+    "me gustaría saber sobre la historia de los organos": {
+      "categoria": "historia",
+      "frecuencia": 1
+    },
+    " me gustaría saber sobre la historia de los organos": {
+      "categoria": "historia",
+      "frecuencia": 4
+    },
+    "hablame sobre lo liturgico": {
+      "categoria": "historia",
+      "frecuencia": 1
+    },
+    "hablame sobre lo liturgia": {
+      "categoria": "musica_liturgica",
+      "frecuencia": 2
+    }
+  },
+  "feedback": {}
+}
