@@ -28,6 +28,27 @@
           "mensaje": "Ha sido un placer compartir información sobre este maravilloso instrumento. ¡Vuelve pronto! 🎵"
         }
       ]
+    },
+    {
+      "fecha": "2025-05-04 01:22:49",
+      "intercambios": [
+        {
+          "rol": "usuario",
+          "mensaje": "& C:/Users/Jesus/anaconda3/python.exe \"e:/Escuela/CETI Colomos/7mo Semestre/ANÁLISIS DE DATOS/2do Parcial/OrgueBot/OrgueBot.py\""
+        },
+        {
+          "rol": "bot",
+          "mensaje": "Mmm... esa pregunta se sale de mi registro. ¿Quieres probar con otra? 🎵"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "salir"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "¡Gracias por conversar sobre órganos! Espero haberte ayudado. ¡Hasta pronto! 👋"
+        }
+      ]
     }
   ],
   "preguntas_frecuentes": {
