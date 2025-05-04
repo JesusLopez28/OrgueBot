@@ -1,9 +1,7 @@
 import random
-import re
 import json
 import os
 import datetime
-import nltk
 import colorama
 from colorama import Fore, Style
 from difflib import SequenceMatcher
