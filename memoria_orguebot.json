@@ -54,7 +54,7 @@
   "preguntas_frecuentes": {
     "me gustaría saber sobre la historia de los organos": {
       "categoria": "historia",
-      "frecuencia": 1
+      "frecuencia": 3
     },
     " me gustaría saber sobre la historia de los organos": {
       "categoria": "historia",
@@ -67,6 +67,14 @@
     "hablame sobre lo liturgia": {
       "categoria": "musica_liturgica",
       "frecuencia": 2
+    },
+    "hola": {
+      "categoria": "historia",
+      "frecuencia": 1
+    },
+    "adios": {
+      "categoria": "historia",
+      "frecuencia": 1
     }
   },
   "feedback": {}
