@@ -1,0 +1,221 @@
+{
+  "conversaciones": [
+    {
+      "fecha": "2025-05-04 12:43:31",
+      "intercambios": [
+        {
+          "rol": "usuario",
+          "mensaje": "ayuda"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "Puedes preguntarme sobre historia, compositores, estructura, técnica, órganos famosos, música litúrgica, mantenimiento u otras curiosidades del órgano. También puedo contarte algún dato curioso aleatorio si escribes 'dato curioso'."
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "konami"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "Mmm... esa pregunta se sale de mi registro. ¿Quieres probar con otra? 🎵"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "compositores"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "Louis Vierne, organista ciego de Notre-Dame de París, murió en 1937 mientras daba un recital en su amado órgano. ¡Un final dramático para un gran músico! 🎭"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "b a c h"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "🎼 *El órgano toca la secuencia de notas Si♭-La-Do-Si♮* ¡Has descubierto el motivo BACH! En notación alemana, estas notas deletrean B-A-C-H. El propio Johann Sebastian usó este motivo en sus composiciones. ¡Eres un verdadero conocedor! 👏 🎉 ¡Has encontrado un nuevo easter egg!"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "arriba arriba abajo abajo izquierda derecha izquierda derecha b a"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "🎮 ¡CÓDIGO KONAMI ACTIVADO! Acabas de desbloquear el modo organista invencible. Ahora puedes tocar Bach a 200 BPM sin equivocarte. ¡Poderes ilimitados! 🎹🔥 🎉 ¡Has encontrado un nuevo easter egg!"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "1"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "No dispongo de esa información en mi base de conocimientos. ¿Te interesa saber sobre la historia, compositores o técnica del órgano? 📚"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "compositores"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "César Franck revitalizó la música de órgano en Francia durante el siglo XIX con obras como sus Tres Corales. 🇫🇷"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "clear"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "El polvo es uno de los mayores enemigos del órgano, ya que puede entrar en los tubos y cambiar su sonido. Algunos órganos modernos incorporan filtros de aire. 🌬️"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "history"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "Los órganos de tubos requieren afinación regular, especialmente cuando cambian las temperaturas estacionales. 🔧"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "modo divertido"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "¡Modo divertido activado! 🎭 Prepárate para respuestas con más ritmo y melodía."
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "Dame historia"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "Cada tubo debe ser afinado individualmente, ¡vaya!  lo que significa que un órgano grande puede requerir varios días para una afinación completa! 🎵 ⏱️ 🎭🎼"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "historia"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "El temperamento igual, ¡vaya!  usado en pianos modernos, ¡vaya!  no siempre se aplica en órganos históricos que pueden usar temperamentos mesotónicos u otros sistemas de afinación! 🎵 🧮 🎹🎵"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "compositores"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "El temperamento igual, ¡vaya!  usado en pianos modernos, ¡vaya!  no siempre se aplica en órganos históricos que pueden usar temperamentos mesotónicos u otros sistemas de afinación! 🎵 🧮 🎧🎶"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "compositores"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "¡Pregunta número 10! Para celebrarlo, aquí tienes un dato curioso: Mozart escribió música para un instrumento llamado 'Orgelwalze', un tipo de órgano mecánico similar a una caja de música. 🎡"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "adios"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "La humedad es un factor crítico para los órganos de tubos: muy poca puede agrietar la madera, ¡vaya!  demasiada puede causar oxidación! 🎵 💧 🎹🎼"
+        },
+        {
+          "rol": "usuario",
+          "mensaje": "salir"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "¡Adiós! Si tienes más preguntas sobre el órgano, no dudes en volver a consultarme. 🎹"
+        }
+      ]
+    },
+    {
+      "fecha": "2025-05-04 12:44:02",
+      "intercambios": [
+        {
+          "rol": "usuario",
+          "mensaje": "adiós"
+        },
+        {
+          "rol": "bot",
+          "mensaje": "Ha sido un placer compartir información sobre este maravilloso instrumento. ¡Vuelve pronto! 🎵"
+        }
+      ]
+    }
+  ],
+  "preguntas_frecuentes": {
+    "compositores": {
+      "categoria": "compositores",
+      "frecuencia": 3
+    },
+    "clear": {
+      "categoria": "mantenimiento",
+      "frecuencia": 1
+    },
+    "history": {
+      "categoria": "mantenimiento",
+      "frecuencia": 1
+    },
+    "dame historia": {
+      "categoria": "mantenimiento",
+      "frecuencia": 1
+    },
+    "historia": {
+      "categoria": "mantenimiento",
+      "frecuencia": 2
+    },
+    "adios": {
+      "categoria": "mantenimiento",
+      "frecuencia": 1
+    },
+    "estructura": {
+      "categoria": "estructura",
+      "frecuencia": 1
+    },
+    "parte": {
+      "categoria": "estructura",
+      "frecuencia": 1
+    },
+    "franck": {
+      "categoria": "compositores",
+      "frecuencia": 1
+    },
+    "músico": {
+      "categoria": "compositores",
+      "frecuencia": 1
+    },
+    "messiaen": {
+      "categoria": "compositores",
+      "frecuencia": 1
+    },
+    "origen": {
+      "categoria": "historia",
+      "frecuencia": 1
+    },
+    "antiguo": {
+      "categoria": "historia",
+      "frecuencia": 1
+    },
+    "evolución": {
+      "categoria": "historia",
+      "frecuencia": 1
+    },
+    "dime algun organo importante": {
+      "categoria": "organos_famosos",
+      "frecuencia": 4
+    },
+    "insólito": {
+      "categoria": "curiosidades",
+      "frecuencia": 1
+    }
+  },
+  "feedback": {},
+  "huevos_pascua_encontrados": [
+    "motivo_bach",
+    "konami_code"
+  ]
+}
