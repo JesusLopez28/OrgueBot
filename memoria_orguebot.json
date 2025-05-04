@@ -150,7 +150,7 @@
   "preguntas_frecuentes": {
     "compositores": {
       "categoria": "compositores",
-      "frecuencia": 3
+      "frecuencia": 4
     },
     "clear": {
       "categoria": "mantenimiento",
@@ -194,11 +194,11 @@
     },
     "origen": {
       "categoria": "historia",
-      "frecuencia": 1
+      "frecuencia": 2
     },
     "antiguo": {
       "categoria": "historia",
-      "frecuencia": 1
+      "frecuencia": 2
     },
     "evolución": {
       "categoria": "historia",
@@ -210,6 +210,18 @@
     },
     "insólito": {
       "categoria": "curiosidades",
+      "frecuencia": 1
+    },
+    "liturgia": {
+      "categoria": "musica_liturgica",
+      "frecuencia": 1
+    },
+    "cuidar": {
+      "categoria": "mantenimiento",
+      "frecuencia": 1
+    },
+    "renovar": {
+      "categoria": "mantenimiento",
       "frecuencia": 1
     }
   },
