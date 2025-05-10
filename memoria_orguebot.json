@@ -150,7 +150,7 @@
   "preguntas_frecuentes": {
     "compositores": {
       "categoria": "compositores",
-      "frecuencia": 4
+      "frecuencia": 5
     },
     "clear": {
       "categoria": "mantenimiento",
@@ -166,7 +166,7 @@
     },
     "historia": {
       "categoria": "mantenimiento",
-      "frecuencia": 2
+      "frecuencia": 3
     },
     "adios": {
       "categoria": "mantenimiento",
@@ -174,7 +174,7 @@
     },
     "estructura": {
       "categoria": "estructura",
-      "frecuencia": 1
+      "frecuencia": 2
     },
     "parte": {
       "categoria": "estructura",
@@ -223,11 +223,116 @@
     "renovar": {
       "categoria": "mantenimiento",
       "frecuencia": 1
+    },
+    "compositor": {
+      "categoria": "compositores",
+      "frecuencia": 1
+    },
+    "¿cuál es el origen del órgano musical?": {
+      "categoria": "historia",
+      "frecuencia": 15
+    },
+    "¿quiénes son los compositores más famosos para órgano?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 5
+    },
+    "¿cómo está estructurado un órgano de tubos?": {
+      "categoria": "estructura",
+      "frecuencia": 15
+    },
+    "¿cuáles son las técnicas básicas para tocar el órgano?": {
+      "categoria": "tecnica",
+      "frecuencia": 18
+    },
+    "¿cuáles son los órganos más famosos del mundo?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 15
+    },
+    "¿cómo se usa el órgano en la música litúrgica?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 18
+    },
+    "¿qué mantenimiento requiere un órgano de tubos?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 16
+    },
+    "cuéntame alguna curiosidad sobre los órganos": {
+      "categoria": "organos_famosos",
+      "frecuencia": 18
+    },
+    "¿qué compositores escribieron para órgano?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 10
+    },
+    "¿quién es un compositor famoso de música para órgano?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 1
+    },
+    "¿quién es un compositor?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 1
+    },
+    "¿quiénes son los músicos más famosos para órgano?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 1
+    },
+    "¿quiénes son los músicos para órgano?": {
+      "categoria": "historia",
+      "frecuencia": 1
+    },
+    "¿quiénes son los músicos?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 5
+    },
+    "músicos?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 4
+    },
+    "¿cuál es el origen o la historia del órgano musical?": {
+      "categoria": "historia",
+      "frecuencia": 5
+    },
+    "¿qué compositores famosos, como bach, escribieron para órgano?": {
+      "categoria": "compositores",
+      "frecuencia": 5
+    },
+    "¿cómo está estructurado o construido un órgano de tubos?": {
+      "categoria": "estructura",
+      "frecuencia": 5
+    },
+    "¿cuáles son las técnicas básicas para tocar o interpretar música en el órgano?": {
+      "categoria": "tecnica",
+      "frecuencia": 5
+    },
+    "¿cuáles son los órganos más famosos o conocidos del mundo?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 5
+    },
+    "¿cómo se usa el órgano en la música litúrgica o religiosa?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 5
+    },
+    "¿qué mantenimiento o cuidado requiere un órgano de tubos?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 1
+    },
+    "cuéntame alguna curiosidad o dato interesante sobre los órganos": {
+      "categoria": "curiosidades",
+      "frecuencia": 5
+    },
+    "¿qué mantenimiento o cuidado requiere estar instrumento?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 1
+    },
+    "¿qué mantenimiento o cuidado requiere este instrumento?": {
+      "categoria": "organos_famosos",
+      "frecuencia": 3
     }
   },
   "feedback": {},
   "huevos_pascua_encontrados": [
     "motivo_bach",
-    "konami_code"
+    "konami_code",
+    "phantom_dracula"
   ]
 }

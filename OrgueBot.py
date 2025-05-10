@@ -263,14 +263,14 @@ class OrgueBot:
         }
         
         self.categorias_palabras = {
-            "historia": ["historia", "origen", "antiguo", "evolución", "histórico", "cuando", "comenzó", "inventó", "creó", "surgió"],
-            "compositores": ["compositor", "bach", "buxtehude", "franck", "messiaen", "mendelssohn", "músico", "autor", "escribió", "compuso"],
-            "estructura": ["estructura", "parte", "tubo", "consola", "manual", "pedal", "registro", "construcción", "diseño", "componente"],
-            "tecnica": ["técnica", "tocar", "interpretar", "ejecución", "pedal", "digitación", "registración", "método", "práctica", "estudio"],
-            "organos_famosos": ["famoso", "importante", "grande", "catedral", "iglesia", "notre dame", "wanamaker", "conocido", "monumental", "impresionante"],
-            "musica_liturgica": ["liturgia", "misa", "iglesia", "religioso", "servicio", "culto", "ceremonia", "ritual", "sagrado", "eclesiástico"],
-            "mantenimiento": ["mantener", "afinar", "restaurar", "conservar", "reparar", "cuidar", "preservar", "ajustar", "limpiar", "renovar"],
-            "curiosidades": ["curioso", "interesante", "insólito", "extraño", "sorprendente", "dato", "sabías", "impactante", "anécdota", "fascinante"]
+            "historia": ["historia", "origen", "antiguo", "evolución", "histórico", "cuando", "comenzó", "inventó", "creó", "surgió", "primero", "antigüedad", "inicios", "principio"],
+            "compositores": ["compositor", "bach", "buxtehude", "franck", "messiaen", "mendelssohn", "músico", "autor", "escribió", "compuso", "famosos", "importantes", "reconocidos", "grandes", "obras"],
+            "estructura": ["estructura", "parte", "tubo", "consola", "manual", "pedal", "registro", "construcción", "diseño", "componente", "conformado", "construido", "hecho", "organizado", "compuesto"],
+            "tecnica": ["técnica", "tocar", "interpretar", "ejecución", "pedal", "digitación", "registración", "método", "práctica", "estudio", "aprender", "básicas", "principiantes", "iniciación", "ejecutar"],
+            "organos_famosos": ["famoso", "importante", "grande", "catedral", "iglesia", "notre dame", "wanamaker", "conocido", "monumental", "impresionante", "popular", "reconocido", "destacado", "célebres", "renombrados", "mundo"],
+            "musica_liturgica": ["liturgia", "misa", "iglesia", "religioso", "servicio", "culto", "ceremonia", "ritual", "sagrado", "eclesiástico", "religión", "católico", "protestante", "celebración"],
+            "mantenimiento": ["mantener", "afinar", "restaurar", "conservar", "reparar", "cuidar", "preservar", "ajustar", "limpiar", "renovar", "cuidado", "conservación", "requiere", "necesita"],
+            "curiosidades": ["curioso", "interesante", "insólito", "extraño", "sorprendente", "dato", "sabías", "impactante", "anécdota", "fascinante", "curiosidad", "asombroso", "cuéntame", "sabes"]
         }
     
     def _preprocesar_texto(self, texto):
@@ -282,41 +282,107 @@ class OrgueBot:
     def _calcular_similitud(self, texto1, texto2):
         """Calcula la similitud entre dos textos"""
         return SequenceMatcher(None, texto1.lower(), texto2.lower()).ratio()
+    
+    def _encontrar_respuesta_relevante(self, pregunta, categoria):
+        """Encuentra la respuesta más relevante dentro de una categoría"""
+        mejor_similitud = 0
+        mejor_respuesta = None
+        
+        # Palabras clave específicas por categoría para mejorar la búsqueda
+        palabras_clave_categoria = {
+            "historia": ["origen", "historia", "antiguo", "antigüedad", "comenzó", "inventó"],
+            "compositores": ["bach", "compositor", "escribieron", "compusieron", "famosos"],
+            "estructura": ["estructura", "construido", "compuesto", "partes", "tubos", "cómo funciona"],
+            "tecnica": ["técnicas", "tocar", "interpretar", "básicas", "aprender", "principiantes"],
+            "organos_famosos": ["famosos", "conocidos", "importantes", "mundo", "grandes"],
+            "musica_liturgica": ["liturgia", "religiosa", "misa", "iglesia", "ceremonia"],
+            "mantenimiento": ["mantenimiento", "cuidado", "conservación", "reparación", "requiere"],
+            "curiosidades": ["curiosidad", "dato", "interesante", "curioso", "sabías"]
+        }
+        
+        # Priorizar respuestas relevantes basadas en palabras clave específicas
+        palabras_pregunta = pregunta.lower().split()
+        
+        for respuesta in self.conocimientos[categoria]:
+            # Calcular similitud directa
+            similitud = self._calcular_similitud(pregunta, respuesta)
+            
+            # Aumentar similitud si contiene palabras clave relevantes
+            for palabra in palabras_clave_categoria.get(categoria, []):
+                if palabra in pregunta.lower() and palabra in respuesta.lower():
+                    similitud += 0.15
+            
+            # Para preguntas específicas sobre origen/historia
+            if categoria == "historia" and any(p in pregunta.lower() for p in ["origen", "comenzó", "primero", "inicios"]):
+                if any(p in respuesta.lower() for p in ["origen", "antiguo", "siglo III", "hydraulis", "primeros", "comenzó"]):
+                    similitud += 0.3
+            
+            # Para preguntas sobre compositores específicos como Bach
+            if categoria == "compositores" and "bach" in pregunta.lower():
+                if "bach" in respuesta.lower():
+                    similitud += 0.3
+            
+            # Para preguntas sobre estructura o construcción
+            if categoria == "estructura" and any(p in pregunta.lower() for p in ["estructura", "construido", "compuesto"]):
+                if any(p in respuesta.lower() for p in ["consta", "compone", "consiste", "parte"]):
+                    similitud += 0.3
+            
+            if similitud > mejor_similitud:
+                mejor_similitud = similitud
+                mejor_respuesta = respuesta
+        
+        return mejor_respuesta if mejor_similitud > 0.2 else random.choice(self.conocimientos[categoria])
 
     def categorizar_pregunta(self, pregunta):
         """Determina la categoría de la pregunta utilizando NLP"""
-        pregunta_procesada = ' '.join(self._preprocesar_texto(pregunta))
+        pregunta_procesada = pregunta.lower()
         
-        # Si hay contexto previo, dar preferencia a la misma categoría
-        if self.ultima_categoria:
-            puntuacion_contexto = 0.2  # Bonus por mantener contexto
-        else:
-            puntuacion_contexto = 0
-        
-        mejor_categoria = None
-        mejor_puntuacion = 0.3  # Umbral mínimo de confianza
+        # Inicializar puntuaciones para todas las categorías
+        puntuaciones = {categoria: 0 for categoria in self.categorias_palabras}
         
         # Evaluar cada categoría
         for categoria, palabras_clave in self.categorias_palabras.items():
-            puntuacion = puntuacion_contexto if categoria == self.ultima_categoria else 0
-            
-            # Comprobar coincidencia con palabras clave
+            # Comprobar coincidencia exacta con palabras clave (mayor peso)
             for palabra in palabras_clave:
                 if palabra in pregunta_procesada:
-                    puntuacion += 0.15
+                    puntuaciones[categoria] += 0.5
             
-            # Evaluar la pregunta completa contra cada palabra clave
-            for palabra in palabras_clave:
-                similitud = self._calcular_similitud(pregunta_procesada, palabra)
-                puntuacion += similitud * 0.1
+            # Analizar cada palabra en la pregunta (enfoque más sensible)
+            palabras_pregunta = pregunta_procesada.split()
+            for palabra_pregunta in palabras_pregunta:
+                for palabra_clave in palabras_clave:
+                    # Verificar coincidencia parcial
+                    if palabra_pregunta in palabra_clave or palabra_clave in palabra_pregunta:
+                        if len(palabra_pregunta) >= 4:  # Evitar coincidencias con palabras muy cortas
+                            puntuaciones[categoria] += 0.3
             
-            if puntuacion > mejor_puntuacion:
-                mejor_categoria = categoria
-                mejor_puntuacion = puntuacion
+            # Palabras específicas de alta relevancia
+            palabras_alta_relevancia = {
+                "historia": ["origen", "historia", "antigüedad", "comenzó"],
+                "compositores": ["compositor", "bach", "músicos", "famosos"],
+                "estructura": ["estructura", "construido", "compuesto", "partes"],
+                "tecnica": ["técnica", "tocar", "interpretar", "aprender"],
+                "organos_famosos": ["famoso", "más grande", "conocido", "mundo"],
+                "musica_liturgica": ["liturgia", "misa", "iglesia", "religioso"],
+                "mantenimiento": ["mantenimiento", "cuidado", "conservación", "reparación"],
+                "curiosidades": ["curiosidad", "curioso", "dato", "interesante"]
+            }
+            
+            # Añadir puntos extra por palabras de alta relevancia
+            for palabra in palabras_alta_relevancia.get(categoria, []):
+                if palabra in pregunta_procesada:
+                    puntuaciones[categoria] += 1.0
+            
+        # Determinar la categoría con mayor puntuación
+        mejor_categoria = max(puntuaciones, key=puntuaciones.get)
+        puntuacion_maxima = puntuaciones[mejor_categoria]
         
-        # Actualizar contexto
-        self.ultima_categoria = mejor_categoria
-        return mejor_categoria
+        # Solo devolver la categoría si supera un umbral mínimo
+        if puntuacion_maxima > 0.5:
+            self.ultima_categoria = mejor_categoria
+            return mejor_categoria
+        else:
+            return None
     
     def verificar_easter_eggs(self, mensaje):
         """Verifica si el mensaje activa algún easter egg"""
@@ -347,20 +413,15 @@ class OrgueBot:
         if respuesta_egg:
             return respuesta_egg
         
-        # Incrementar contador de preguntas
-        self.contador_preguntas += 1
-        
-        # Easter egg secreto: cada 10 preguntas da un dato curioso
-        if self.contador_preguntas % 10 == 0:
-            return f"¡Pregunta número {self.contador_preguntas}! Para celebrarlo, aquí tienes un dato curioso: {random.choice(self.mensajes['datos_curiosos'])}"
-        
         # Determinar categoría
         categoria = self.categorizar_pregunta(pregunta)
         
         # Registrar pregunta si se identificó una categoría
         if categoria:
             self.memoria.registrar_pregunta(pregunta, categoria)
-            respuesta_base = random.choice(self.conocimientos[categoria])
+            
+            # Buscar la respuesta más relevante en lugar de elegir una aleatoria
+            respuesta_base = self._encontrar_respuesta_relevante(pregunta, categoria)
             
             # Si está en modo divertido, añadir más emojis y entusiasmo
             if self.modo_divertido:
